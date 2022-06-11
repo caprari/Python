@@ -1,0 +1,5 @@
+print ('==== DESAFIO 2 ====')
+nome = input('Seu nome? ')
+peso = input ('Seu peso? ')
+print ('Olá', nome, '! Muito prazer. Seu peso é', peso, '.')
+print ('Fim do Programa')
