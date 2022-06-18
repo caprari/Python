@@ -1,9 +1,9 @@
-from ex115.lib.interface import *
-from ex115.lib.arquivo import *
+from Curso_Python_Youtube_Curso_em_Video_ex115.lib.interface import *
+from Curso_Python_Youtube_Curso_em_Video_ex115.lib.arquivo import *
 from time import sleep
 
-arquivo = 'cadastro.xls'
-# arquivo = 'cadastro.txt'
+# arquivo = 'cadastro.xls'
+arquivo = 'cadastro.txt'
 
 if not arquivoExiste(arquivo):
     criarArquivo(arquivo)
@@ -16,7 +16,10 @@ while True:
         cabecalho('Novo Cadastro')
         nome = str(input('Nome: '))
         idade = leiaint('Idade: ')
-        cadastrarPessoa(arquivo, nome, idade)
+        peso = float(input('Peso: '))
+        altura = float(input('Altura: '))
+        calculoIMC(peso, altura)
+        cadastrarPessoa(arquivo, nome, idade, peso, altura)
     elif resposta == 3:
         cabecalho('Saindo do Sistema!')
         break

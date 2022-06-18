@@ -1,6 +1,0 @@
-Marcelo;35
-Luciana;34
-Henrique;7
-Arthur;4
-Ana;23
-Arlinda;66

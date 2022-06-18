@@ -12,13 +12,13 @@ def leiaint(msg):
             return num
 
 
-def linha(tam = 42):
+def linha(tam = 80):
     return '-' * tam
 
 
 def cabecalho(txt):
     print(linha())
-    print(txt.center(42))
+    print(txt.center(80))
     print(linha())
 
 
@@ -36,4 +36,6 @@ def menu(lista):
 def cadastro(lista):
     nome = str(input('Informe o nome: '))
     idade = int(input('Informe a idade: '))
+    peso = float(input('Informe o peso:'))
+    altura = float(input('Informe a altura: '))
 
