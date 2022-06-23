@@ -19,6 +19,7 @@ def criarArquivo(nome):
     else:
         print(f'Arquivo {nome} criado com sucesso!')
 
+
 def lerArquivo(nome):
     try:
         a = open(nome, 'r')
@@ -26,11 +27,11 @@ def lerArquivo(nome):
         print('Erro na leitura do arquivo')
     else:
         cabecalho('Pessoas Cadastradas')
-        print('Nome'.ljust(44), 'Idade', '  Peso', '  Altura', '  IMC')
+        print('Codigo', 'Nome'.ljust(38), 'Idade', '  Peso', '  Altura', '  IMC')
         for linha in a:
             dado = linha.split(';')
-            dado[4] = dado[4].replace('\n', '')
-            print(f'{dado[0]:<45}{dado[1]:<3}     {dado[2]:<5}  {dado[3]:<5}    {dado[4]:>5}')
+            dado[5] = dado[5].replace('\n', '')
+            print(f'{dado[0]}      {dado[1]:<42}{dado[2]:<3}  {dado[3]:<5}  {dado[4]:<5}    {dado[5]:>5}')
 
         print()
         cabecalho('Tabela de Referência de IMC')
@@ -51,7 +52,7 @@ def lerArquivo(nome):
         a.close()
 
 
-def cadastrarPessoa(arquivo, nome='Desconhecido', idade=0, peso=0, altura=0):
+def cadastrarPessoa(codigo, arquivo, nome='Desconhecido', idade=0, peso=0, altura=0):
 
     imc2 = peso / altura**2
     imc = ('%.4f' % imc2)
@@ -62,7 +63,7 @@ def cadastrarPessoa(arquivo, nome='Desconhecido', idade=0, peso=0, altura=0):
         print('Erro ao abrir arquivo!')
     else:
         try:
-            a.write(f'{nome};{idade};{peso};{altura};{imc}\n')
+            a.write(f'{codigo};{nome};{idade};{peso};{altura};{imc}\n')
         except:
             print('Erro ao cadastrar no arquivo!')
         else:
@@ -72,9 +73,17 @@ def cadastrarPessoa(arquivo, nome='Desconhecido', idade=0, peso=0, altura=0):
 
 def calculoIMC(peso, altura):
     imc2 = peso / altura**2
-    imc = ('%.4f' % imc2)
+    imc = ('%.1f' % imc2)
     return imc
 
+
+def buscarCodigo(nome):
+    try:
+        a = open(nome, 'r')
+    except:
+        print('Erro na leitura do arquivo')
+    else:
+        return
 
 
 
