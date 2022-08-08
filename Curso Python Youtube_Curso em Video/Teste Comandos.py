@@ -82,7 +82,7 @@ print(f'O triplo de {num} é {uteis.triplo(num)}.')
 #print('Número Aleatório gerado:', numero)
 
 
-#frase = '  Curso em video Python  '
+#frase = '  Curso_Python_Alura_OO2 em video Python  '
 #print(frase[0:5])
 #print(frase[:5])
 #print(frase[6:])
@@ -91,9 +91,9 @@ print(f'O triplo de {num} é {uteis.triplo(num)}.')
 #print(frase.count('o'))
 #print(frase.count('o', 0, 14))
 #print(frase.find('Cursos'))
-#frase = frase.replace('Curso', 'Android')
+#frase = frase.replace('Curso_Python_Alura_OO2', 'Android')
 #print(frase)
-#print(frase.replace('Curso', 'Android'))
+#print(frase.replace('Curso_Python_Alura_OO2', 'Android'))
 #
 #print(frase.upper())
 #print(frase.lower())
