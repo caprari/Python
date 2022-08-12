@@ -45,27 +45,66 @@ class Serie(Programa):
     def __str__(self):
         return f'{self._nome} - {self.ano} - {self.temporada} temporadas - {self._likes} likes'
 
+class Playlist:
+    def __init__(self, nome, programas):
+        self.nome = nome
+        self._programas = programas
 
+    def __getitem__(self, item):
+        return self._programas[item]
+
+    @property
+    def listagem(self):
+        return self._programas
+
+    def __len__(self):
+        return len(self._programas)
+
+# Filmes
 vingadores = Filme('vingadores - guerra infinita', 2018, 160)
-vingadores.dar_likes()
-# print(f'Nome: {vingadores.nome} - Ano: {vingadores.ano} '
-#       f'- Duração: {vingadores.duracao} minutos '
-#       f'- Likes: {vingadores.likes}')
-# print(f'Nome: {vingadores.nome} - Likes: {vingadores.likes}')
-# print(f'O filme {vingadores.nome} foi lançado em {vingadores.ano}'
-#       f' e tem duração de {vingadores.duracao} minutos.')
+hulk = Filme('hulk', 2010, 100)
+minions = Filme('minions 2 - a origem do gru', 2022, 120)
 
+# Séries
 atlanta = Serie('atlanta', 2018, 2)
+csi = Serie('csi', 1999, 4)
+terminator = Serie('terminator', 1980, 3)
+
+# Likes
+vingadores.dar_likes()
+vingadores.dar_likes()
+vingadores.dar_likes()
+
+hulk.dar_likes()
+hulk.dar_likes()
+hulk.dar_likes()
+hulk.dar_likes()
+
+minions.dar_likes()
+minions.dar_likes()
+
 atlanta.dar_likes()
 atlanta.dar_likes()
-# print(f'Nome: {atlanta.nome} - Ano: {atlanta.ano} '
-#       f'- Temporadas: {atlanta.temporada} '
-#       f'- Likes: {atlanta.likes}')
-# print(f'Nome: {atlanta.nome} - Likes: {atlanta.likes}')
 
-filmes_e_series = [vingadores, atlanta]
+csi.dar_likes()
+csi.dar_likes()
+csi.dar_likes()
+csi.dar_likes()
 
-for programa in filmes_e_series:
+terminator.dar_likes()
+
+filmes_e_series = [vingadores, hulk, minions, atlanta, csi, terminator]
+playlist_fim_de_semana = Playlist('playlist_fim_de_semana', filmes_e_series)
+
+for programa in playlist_fim_de_semana:
+    print(programa)
+
+print(f'O tamanho da lista é : {len(playlist_fim_de_semana)}')
+if minions in playlist_fim_de_semana:
+    print('Minions está na lista.')
+else:
+    print('Minions não está na lista.')
+
     # detalhes = programa.duracao if hasattr(programa, 'duracao') else programa.temporada
     # if hasattr(programa, 'duracao'):
     #     detalhes = programa.duracao
@@ -73,7 +112,20 @@ for programa in filmes_e_series:
     #     detalhes = programa.temporada
     # print(f'Nome: {programa.nome} - {detalhes} - Likes: {programa.likes}')
     # programa.imprime()
-    print(programa)
+
+# print(f'Nome: {vingadores.nome} - Ano: {vingadores.ano} '
+#       f'- Duração: {vingadores.duracao} minutos '
+#       f'- Likes: {vingadores.likes}')
+# print(f'Nome: {vingadores.nome} - Likes: {vingadores.likes}')
+# print(f'O filme {vingadores.nome} foi lançado em {vingadores.ano}'
+#       f' e tem duração de {vingadores.duracao} minutos.')
+
+# print(f'Nome: {atlanta.nome} - Ano: {atlanta.ano} '
+#       f'- Temporadas: {atlanta.temporada} '
+#       f'- Likes: {atlanta.likes}')
+# print(f'Nome: {atlanta.nome} - Likes: {atlanta.likes}')
+
+
 
 
 
