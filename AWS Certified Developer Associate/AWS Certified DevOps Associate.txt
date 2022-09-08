@@ -1,0 +1,9 @@
+AWS Certified Developer Associate
+
+Curso: https://www.udemy.com/course/aws-certified-developer-associate-dva-c01/
+Simulado: https://itau.udemy.com/course/aws-certified-developer-associate-practice-tests-dva-c01/
+Jogo RPG: https://aws.amazon.com/pt/training/digital/aws-cloud-quest/
+AWS Skill Builder: https://explore.skillbuilder.aws/learn/signin
+Training and Certification: https://aws.amazon.com/pt/training/?nc2=sb_tc
+
+
